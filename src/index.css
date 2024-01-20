@@ -187,7 +187,7 @@ body {
 
 @keyframes blink-scroll-text {
   0%, 40%, 80% {
-    color: rgb(124, 124, 124);
+    color: rgb(149, 149, 149);
     transform: scale(1.2);
   }
 
