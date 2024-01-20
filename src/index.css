@@ -13,7 +13,7 @@
 
 body {
   font-family: 'League Spartan', sans-serif;
-  height: 100%;
+  height: 400vh;
   width: 100%;
   color: white;
   background-color: var(--background-color);
@@ -29,19 +29,19 @@ body {
   transition: opacity .10s ease-in-out, visibility;
 }
 
-svg {
+.loading-svg {
   width: 20rem;
   font-weight: 700;
 }
 
-svg text {
+.loading-svg text {
   font-family: 'Poppins', sans-serif;
   font-size: 5rem;
   stroke-width: 2;
   letter-spacing: -3px;
 }
 
-svg text.loading-text {
+.loading-svg text.loading-text {
   font-family: 'Poppins', sans-serif;
   stroke: wheat;
   animation: animate-stroke 5s infinite alternate;
@@ -129,7 +129,6 @@ svg text.loading-text {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 4px 0 0 0;
 }
 
 .header-flex-timeline-icons {
@@ -140,6 +139,42 @@ svg text.loading-text {
 
 .header-lang-icon {
   width: 4vw;
+}
+
+.html-icon {
+  position: relative;
+  top: 71vh;
+  left: 10vw;
+}
+
+.css-icon {
+  position: relative;
+  top: 65vh;
+  right: 10vw;
+}
+
+.python-icon {
+  position: relative;
+  top: 58vh;
+  left: 10vw;
+}
+
+.js-icon {
+  position: relative;
+  top: 51.5vh;
+  right: 10vw;
+}
+
+.node-icon {
+  position: relative;
+  top: 46vh;
+  left: 10vw;
+}
+
+.react-icon {
+  position: relative;
+  top: 39.5vh;
+  right: 10vw;
 }
 
 .scroll-line-div {
@@ -166,4 +201,19 @@ svg text.loading-text {
   margin: 10px;
   font-weight: bold;
   animation: blink-scroll-text 8s infinite alternate;
+}
+
+.line-container {
+  position: fixed;
+  top: 41.1%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.scroll-line-line {
+  display: inline-block;
+  height: 100%;
 }
