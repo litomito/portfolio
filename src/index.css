@@ -3,6 +3,7 @@
 :root {
   --background-color: rgb(19, 19, 19);
   --pink-text-color: rgb(245, 65, 122);
+  --scroll: 0;
 }
 
 * {
@@ -11,9 +12,13 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'League Spartan', sans-serif;
-  height: 400vh;
+  height: 350vh;
   width: 100%;
   color: white;
   background-color: var(--background-color);
@@ -142,39 +147,39 @@ body {
 }
 
 .html-icon {
-  position: relative;
-  top: 71vh;
-  left: 10vw;
+  position: absolute;
+  top: 156vh;
+  left: 57vw;
 }
 
 .css-icon {
-  position: relative;
-  top: 65vh;
-  right: 10vw;
+  position: absolute;
+  top: 173vh;
+  right: 57vw;
 }
 
 .python-icon {
-  position: relative;
-  top: 58vh;
-  left: 10vw;
+  position: absolute;
+  top: 190vh;
+  left: 57.5vw;
 }
 
 .js-icon {
-  position: relative;
-  top: 51.5vh;
-  right: 10vw;
+  position: absolute;
+  top: 205.5vh;
+  right: 57.5vw;
 }
 
 .node-icon {
-  position: relative;
-  top: 46vh;
-  left: 10vw;
+  position: absolute;
+  top: 223vh;
+  left: 57vw;
 }
 
 .react-icon {
-  position: relative;
-  top: 39.5vh;
-  right: 10vw;
+  position: absolute;
+  top: 239vh;
+  right: 57.5vw;
 }
 
 .scroll-line-div {
@@ -205,10 +210,10 @@ body {
 
 .line-container {
   position: fixed;
-  top: 41.1%;
+  top: 89%;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 200vh;
   text-align: center;
   overflow: hidden;
 }
@@ -216,4 +221,5 @@ body {
 .scroll-line-line {
   display: inline-block;
   height: 100%;
+  margin: 10vh 0 0 0;
 }
