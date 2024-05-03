@@ -10,22 +10,24 @@ const TimeLine = () => {
 			const documentHeight = document.body.clientHeight;
 
 			const thresholds = {
-				html: 620,
-				css: 880,
-				python: 1140,
-				javascript: 1400,
-				node: 1680,
-				react: 1950,
+				html: { threshold: 620, maxScrollPercent: 100 }, // Example adjustment for HTML
+				css: { threshold: 880, maxScrollPercent: 90 },
+				python: { threshold: 1140, maxScrollPercent: 80 },
+				javascript: { threshold: 1400, maxScrollPercent: 70 },
+				node: { threshold: 1680, maxScrollPercent: 60 },
+				react: { threshold: 1950, maxScrollPercent: 50 },
 			};
 
 			const newScrollPercentWidths = {};
-			for (const [image, threshold] of Object.entries(thresholds)) {
+			for (const [image, { threshold, maxScrollPercent }] of Object.entries(
+				thresholds,
+			)) {
 				let newScrollPercent;
 				if (scrollTop > threshold) {
 					newScrollPercent =
 						((scrollTop - threshold) /
 							(documentHeight - viewportHeight - threshold)) *
-						100;
+						maxScrollPercent;
 				} else {
 					newScrollPercent = 0;
 				}
@@ -52,7 +54,7 @@ const TimeLine = () => {
 						className={"header-lang-icon html-icon"}
 						style={{
 							maxWidth: 65,
-							width: `${scrollPercentWidths.html}%`
+							width: `${scrollPercentWidths.html}%`,
 						}}
 					/>
 					<img
@@ -61,7 +63,7 @@ const TimeLine = () => {
 						className="header-lang-icon css-icon"
 						style={{
 							maxWidth: 65,
-							width: `${scrollPercentWidths.css}%`
+							width: `${scrollPercentWidths.css}%`,
 						}}
 					/>
 					<img
@@ -88,7 +90,7 @@ const TimeLine = () => {
 						className="header-lang-icon node-icon"
 						style={{
 							maxWidth: 65,
-							width: `${scrollPercentWidths.node}%`
+							width: `${scrollPercentWidths.node}%`,
 						}}
 					/>
 					<img
@@ -97,7 +99,7 @@ const TimeLine = () => {
 						className="header-lang-icon react-icon"
 						style={{
 							maxWidth: 65,
-							width: `${scrollPercentWidths.react}%`
+							width: `${scrollPercentWidths.react}%`,
 						}}
 					/>
 				</div>

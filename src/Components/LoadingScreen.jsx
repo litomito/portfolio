@@ -3,14 +3,29 @@ import Header from "./Header";
 
 const LoadingScreen = () => {
 	useEffect(() => {
-		const loaderContainer = document.querySelector(".loading-container");
-		const pageContent = document.querySelector(".page-content");
+        const loaderContainer = document.querySelector(".loading-container");
+        const pageContent = document.querySelector(".page-content");
 
-		window.addEventListener("load", () => {
-			loaderContainer.classList.add("hidden");
-			pageContent.classList.add("visible");
-		});
-	});
+        const handleLoad = () => {
+            loaderContainer.classList.add("hidden");
+            pageContent.classList.add("visible");
+            document.body.style.overflow = "auto";
+        };
+
+        window.addEventListener("load", handleLoad);
+
+        return () => {
+            window.removeEventListener("load", handleLoad);
+        };
+    }, []);
+
+    useEffect(() => {
+        document.body.style.overflow = "hidden";
+
+        return () => {
+            document.body.style.overflow = "auto";
+        };
+    }, []);
 
 	return (
 		<>

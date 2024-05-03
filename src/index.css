@@ -16,12 +16,17 @@ html {
   scroll-behavior: smooth;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   font-family: 'League Spartan', sans-serif;
   height: 350vh;
   width: 100%;
   color: white;
   background-color: var(--background-color);
+  -ms-overflow-style: none;
 }
 
 .loading-container {
@@ -79,6 +84,7 @@ body {
 .loading-container.hidden {
   opacity: 0;
   visibility: hidden;
+  display: none;
 }
 
 .page-content {
@@ -222,4 +228,20 @@ body {
   display: inline-block;
   height: 100%;
   margin: 10vh 0 0 0;
+}
+
+.new-face {
+  position: relative;
+  top: 170vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box-open {
+	max-width: 1660%;
+  max-height: 100vh;
+  border-radius: 8px;
+  background-color: rgb(221, 221, 221);
+  z-index: 0;
 }

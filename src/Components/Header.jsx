@@ -1,6 +1,6 @@
 import React from "react";
 import TimeLine from "./TimeLine";
-import Test2 from "./Test2";
+
 
 const Header = () => {
 	return (
@@ -12,7 +12,6 @@ const Header = () => {
 					</h1>
 				</div>
 				<TimeLine />
-				{/* <Test2 /> */}
 			</div>
 		</>
 	);
